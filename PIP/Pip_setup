@@ -1,1 +1,39 @@
 
+Python Download:
+    https://www.python.org/downloads/
+
+Python Download for Windows:
+    https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe
+
+pip library already available in python setup
+
+.........................................................................
+
+Pip Description:
+
+(1)Manually Install pip using cmd Command:-
+    pip install pip
+
+ or
+
+(1)Manually Install Pip using Url:- 
+    https://bootstrap.pypa.io/get-pip.py
+
+
+(2)List installed  package:
+    pip list
+
+(3)List installed outdated package:
+    pip list -o
+
+(4)List installed updated package:
+    pip list -u
+
+(5)check pip package version:
+    pip show packagename(ex.numpy,panda)
+
+(6)Upgrade Pip:
+    python -m pip install --upgrade pip
+
+(7)Upgrade python package:
+    pip install --upgrade packagename(eg.numpy,django) 
