@@ -1,0 +1,85 @@
+**Topics:**
+
+1. Python list
+2. Python tuple
+3. Python set
+4. Python dictionary
+5. What is the pass statement
+6. What is the break and continue statements
+7. What are 'is', 'not', and 'in' operators
+8. What is a ternary operator
+9. What is the round function
+10. What is a docstring
+11. What is PYTHONPATH
+12. What are *args and **kwargs
+13. What are append, extend, and index functions in a list
+14. What are remove and pop functions in a list
+15. Convert list to a string
+16. What is pickling and unpickling
+17. What is pep8
+18. What is shallow and deep copy
+19. What is [::-1]
+20. What are local and global variables
+21. What is list comprehension
+22. What is dictionary comprehension
+23. What is the map function
+24. What is the filter function
+25. What is an iterator
+26. What is a generator
+27. What is a decorator
+28. What is the zip function
+29. How to sort a list of tuples by index
+30. How to sort a list of dictionaries by key
+31. What is a context manager
+32. What is __init__
+33. What is a class
+34. What is encapsulation
+35. What is inheritance
+36. What is abstraction
+37. What are dunder/magic methods
+38. What are instance and class variables
+39. What are static and class methods
+40. What is the Global Interpreter Lock (GIL)
+41. How is memory managed in Python
+42. What is monkey patching
+43. What is multithreading and multiprocessing
+
+What is Python?
+What are the key features of Python?
+What are the different types of data types in Python?
+What is the difference between a list and a tuple?
+What is a dictionary in Python?
+What is a function in Python?
+What is a class in Python?
+What is object-oriented programming?
+What is the difference between inheritance and polymorphism?
+What is a module in Python?
+What is the Global Interpreter Lock (GIL)?
+What is PEP 8?
+
+What is your experience with unit testing?
+What is your experience with debugging Python code?
+What is your experience with performance optimization?
+What is your experience with continuous integration and continuous delivery (CI/CD)?
+What is your experience with cloud computing platforms such as AWS or Azure?
+
+**(1) What is Python?**
+Ans: Python was created by Guido van Rossum and released in 1991. Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.
+
+**(2) Why Python?**
+Ans: Python is a high-level, interpreted programming language that is object-oriented and has dynamic semantics. Python works with Windows, Mac, Linux, Raspberry Pi, and other platforms. Python has a straightforward syntax when compared to other languages. Compared to other programming languages, Python allows developers to write programs with fewer lines.
+
+**(3) What kinds of applications can Python be used for?**
+Ans: Python can be used for various applications, including games for the web and the internet, scientific and computational applications, language development, image processing, graphic design, enterprise and business applications, operating systems, web applications, email processing, and more.
+
+**(4) What are the advantages of Python?**
+Ans: Python has several advantages, including being an interpreted language, extensible, object-oriented, and providing built-in data structures like tuples, lists, and dictionaries.
+
+**(5) Python Functions?**
+Ans: A function is a piece of code that is written once and can be executed whenever the program calls for it. An example of a function definition in Python is as follows:
+
+```python
+def function_name(parameters_list):
+    # --- statements ---
+    return a_value
+```
