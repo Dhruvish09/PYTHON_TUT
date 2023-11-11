@@ -6,5 +6,7 @@ print(txt.format(age))
 quantity = 3
 itemno = 567
 price = 49.95
-myorder = "I want {} pieces of item {} for {} dollars."
-print(myorder.format(quantity, itemno, price)) 
+# myorder = "I want {} pieces of item {} for {} dollars."
+myorder = f"I want {quantity} pieces of item {itemno} for {price} dollars."
+print(myorder)
+# print(myorder.format(quantity, itemno, price)) 
