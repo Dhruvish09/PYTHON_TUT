@@ -1,0 +1,113 @@
+(1)What is Object-Oriented Programming (OOP):
+Ans:
+    Object-Oriented Programming is a programming paradigm that organizes code into objects, which are instances of classes. It revolves around the concept of encapsulation, inheritance, and polymorphism, allowing developers to model real-world entities and their interactions.
+
+(2)What is a module in Python?
+Ans:
+    A module in Python is a file containing Python code, which can include variables, functions, and classes. Modules allow code organization and 
+    reuse by providing a way to group related functionalities together.
+
+    Built-in Modules:
+        These are modules that come pre-installed with Python and are part of the standard library. 
+        
+        Ex: import math
+            import os
+
+    Third-Party Modules:
+        Modules developed by third-party developers and not part of the Python standard library. They can be installed using package managers like pip.
+        Ex: # Installing a third-party module using pip
+            import requests
+
+    Custom/User-Defined Modules:
+        Modules created by the user to organize and reuse their code across different scripts.
+
+(3)What is __init__?
+
+Ans:  
+    __init__ is a special method in Python classes that is automatically called when an instance of the class is created. 
+
+    Example:
+
+    class Car:
+        def __init__(self, make, model, year):
+            self.make = make
+            self.model = model
+            self.year = year
+
+    # Creating an instance of the Car class
+    my_car = Car(make="Toyota", model="Camry", year=2022)
+
+(4) Python class and functions?
+Ans: 
+    A Class is like an object constructor, or a "blueprint" for creating objects.
+
+    Example:
+    class Dog:
+        def __init__(self, name):
+            self.name = name
+
+        def bark(self):
+            print(f"{self.name} says Woof!")
+
+    my_dog = Dog("Buddy")
+
+    A function is a piece of code that is written once and can be executed whenever the program calls for it. An example of a function definition in Python is as follows:
+
+    Example:
+
+    def add(x, y):
+        return x + y
+
+(5) What are instance and class variables?
+Ans: 
+    Instance variables in Python are variables that are unique to each instance (object) of a class. They represent the characteristics or attributes of individual objects.
+
+    Example:
+        class Car:
+            def __init__(self, brand, model):
+                self.brand = brand    # Instance variable
+                self.model = model    # Instance variable
+
+    Class variables in Python are shared among all instances of a class. They are defined at the class level and represent properties that are common to all objects of the class.
+
+    Example:
+        class Circle:
+        # Class variable
+        pi = 3.14
+
+        def __init__(self, radius):
+            self.radius = radius    # Instance variable
+
+
+(6) What are static and class methods
+Ans:
+    Static methods in Python are methods that belong to a class rather than an instance. They do not have access to instance-specific data and are often used for utility functions.
+
+    Example:
+        class MathOperations:
+            @staticmethod
+            def add(x, y):
+                return x + y
+
+        result = MathOperations.add(3, 4)
+
+    Class methods in Python are methods that are bound to a class rather than an instance. They have access to the class itself and are suitable for operations involving class-level attributes.
+
+    Example:
+        class Employee:
+            total_employees = 0
+
+            def __init__(self, name):
+                self.name = name
+                Employee.total_employees += 1
+
+            @classmethod
+            def get_total_employees(cls):
+                return cls.total_employees
+
+        emp1 = Employee("Alice")
+        emp2 = Employee("Bob")
+
+        total = Employee.get_total_employees()
+
+
