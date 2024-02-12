@@ -1,0 +1,66 @@
+(1)Creat Table:
+
+from django.db import models
+
+from django.db import models
+
+from django.db import models
+
+class MyModel(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    email = models.EmailField()
+    age = models.IntegerField()
+    account_balance = models.DecimalField(max_digits=10, decimal_places=2)
+    height = models.FloatField()
+    is_active = models.BooleanField(default=False)
+    birth_date = models.DateField()
+    last_updated = models.DateTimeField()
+    appointment_time = models.TimeField()
+    website_url = models.URLField()
+    document_file = models.FileField(upload_to='uploads/')
+    profile_picture = models.ImageField(upload_to='images/')
+    related_model = models.ForeignKey('AnotherModel', on_delete=models.CASCADE)
+    related_models = models.ManyToManyField('YetAnotherModel')
+
+class AnotherModel(models.Model):
+    # Define fields for AnotherModel
+    pass
+
+class YetAnotherModel(models.Model):
+    # Define fields for YetAnotherModel
+    pass
+
+(2)Select data:
+
+    female_users = User.objects.filter(gender='F')
+
+(3)Operators:
+    IN:
+        male_and_female_users = User.objects.filter(gender__in=['M', 'F'])
+
+    LIKE:
+        matching_users = User.objects.filter(Q(name__icontains='John') | Q(email__icontains='example.com'))
+        for user in matching_users:
+            print(user.name, user.email)
+
+(4)ORDER BY:
+    users_ordered_by_name = User.objects.order_by('name') # Return asceding order record
+    users_ordered_by_name = User.objects.order_by('-name') # Return descending order record
+
+(5)IS NULL and IS NOT NULL:
+    IS NULL:
+        users_with_null_mobile = User.objects.filter(mobile__isnull=True)
+    IS NOT NULL:
+        users_with_mobile = User.objects.exclude(mobile__isnull=True)
+
+(6)Update and Delete:
+    Update:
+        # Update the age for the student with id=4
+        student = Student.objects.get(id=4)
+        student.age = 25
+        student.save()
+
+    Delete:
+        Student.objects.filter(id=4).delete()

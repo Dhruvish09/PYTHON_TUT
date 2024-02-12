@@ -569,6 +569,56 @@ Ans:
 
         A process is an executable instance of a computer program. Usually, a process is executed in a single sequence of control flow.   
 
+(31)What is chunk in python?
+Ans:
+    In Python, a "chunk" typically refers to a portion or segment of data, often used in the context of iterating over large datasets or files in smaller, manageable parts.
+            
+    chunk_size = 1024  # Define the size of each chunk (e.g., 1 KB)
 
-            
-            
+    with open('large_file.txt', 'rb') as file:
+        while True:
+            chunk = file.read(chunk_size)
+            if not chunk:  # End of file
+                break
+
+(32)What is wsgi and asgi?
+Ans:
+    WSGI (Web Server Gateway Interface):
+        WSGI is a standard interface between web servers and Python web applications or frameworks. 
+        It defines a simple protocol for communication, allowing web servers to send HTTP requests to Python applications and receive responses back.
+    Example:
+
+    # Example WSGI application
+    def application(environ, start_response):
+        status = '200 OK'
+        headers = [('Content-type', 'text/plain')]
+        start_response(status, headers)
+        return [b'Hello, WSGI!']
+    
+    ASGI (Asynchronous Server Gateway Interface):
+    ASGI is an interface similar to WSGI, but designed to handle asynchronous and non-blocking web applications. 
+    It extends the capabilities of WSGI to support asynchronous tasks, long-lived connections, and streaming responses.
+     
+    # Example ASGI application using Django Channels
+    async def websocket_receive(event):
+        while True:
+            message = await event['websocket'].receive_text()
+            await event['websocket'].send_text('Received: ' + message)
+    
+    application = {
+        'websocket': websocket_receive,
+    }
+    
+(33)What is lambda function in Python?
+Ans:
+
+    A lambda function in Python is an anonymous, inline function defined using the lambda keyword.
+
+    Example:
+
+    # Using a lambda function to square a number
+    square = lambda x: x**2
+
+    # Using the lambda function
+    result = square(5)
+    print(result)  # Output: 25

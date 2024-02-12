@@ -1,0 +1,185 @@
+what is mysql?
+what is database?
+create table,
+insert data,
+select data,
+alter data,
+Operators OR,AND,NOT,IN,NOT IN, LIKE, BETWEEN, NOT BETWEEN
+
+
+(1)what is database?
+    A database is an organized collection of structured information or data. 
+
+(3)What is dbms?
+    DBMS(Database Management Systems) are software systems used to store,retrive,and run queries on data.
+
+(4)What is relational database?
+    A relational database is collection of data items with pre-defined relationships between them,stored in the form of table,rows and columns.
+
+(5)Mysql constraints:
+    NOT NULL, UNIQUE, DEFAULT, CHECK, FORIEGN KEY, PRIMARY KEY
+
+(5)Creat Table
+
+create table users(
+	id int unsigned,
+    name varchar(100),
+    email varchar(150),
+    password varchar(100),
+    mobile varchar(15),
+    gender enum("M","D","Y"),
+    dob date,
+    status boolean,
+    user_detail_id INT UNSIGNED,
+    FOREIGN KEY (user_detail_id) REFERENCES user_details(id)
+)
+
+With Constrains:-
+
+create table student(
+	id int not null unique,
+    name varchar(100) not null,
+    email varchar(150) not null unique,
+    age tinyint check(age >= 18),
+    status boolean default 1
+)
+
+(6)Insert Data
+
+INSERT INTO users (id, name, email, mobile, gender, dob, status)
+VALUES
+(2, 'Maitri', 'patelmaitri612000@gmail.com', '6353573222', 'F', '2000-01-09', 1),
+(3, 'kanan', 'patelkanan@gmail.com', '8488861415', 'F', '2000-02-06', 1);
+
+(7)Select Data
+
+SELECT * FROM users where gender = "F";
+OR 
+SELECT name as "Username",email,mobile FROM users where gender = "F";
+
+(8)Update data and Delete data:
+    update student set age = 25 where id = 4; # Update data
+    delete from student where id = 4; # Delete data
+    delete from student where id in (4,5,6); # Delete multiple record data
+
+(9)Operators:
+    IN:
+      SELECT * FROM users
+        WHERE gender IN ('M','F');   
+    NOT IN:
+      SELECT * FROM users
+        WHERE gender NOT IN('M','F');
+    BETWEEN:
+        SELECT * FROM students
+            WHERE age BETWEEN 10 AND 20;
+    NOT BETWEEN:
+        SELECT * FROM students
+            WHERE age NOT BETWEEN 10 AND 20;
+
+(10)Like:
+        The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+
+        There are two wildcards often used in conjunction with the LIKE operator:
+
+        (1)The percent sign % represents zero, one, or multiple characters
+            SELECT * FROM users
+                WHERE name LIKE 'a%';  #start with "a"  
+                WHERE name LIKE '%a';  #end with "a"  
+                WHERE name LIKE '%a%'; #"a" in any position
+                WHERE name LIKE 'a%o'; #start with "a" and ends with "o"
+
+        (2)The underscore sign _ represents one, single character
+            SELECT * FROM Customers
+                WHERE city LIKE '_n%';  #"n" in the second position
+                WHERE city LIKE 'n_%';  #start with "n" and at least 2 char in lenght
+                WHERE city LIKE 'n__%'; #start with "n" and at least 3 char in lenght
+                WHERE city LIKE 'L_nd__';
+
+(11)ORDER BY and DISTINCT:
+    ORDER BY:
+    SELECT * FROM users ORDER BY name ASC # set ASC(ACCENDING) OR DESC(DECENDING)
+
+    DISTINCT:
+    SELECT DISTINCT FROM users # Remove duplicate values    
+    
+(12)NULL and NOT NULL:
+    NULL:
+        SELECT * FROM users where mobile IS NULL; # Return all records where mobile is null 
+    NOT NULL:
+        SELECT * FROM users where mobile IS NOT NULL; # Return all records where mobile is not null
+
+(13)LIMIT and OFFSET:
+    LIMIT:
+        SELECT * FROM users LIMIT 5; #Return first 5 records
+        SELECT * FROM users ORDER BY name DESC LIMIT 5; #Return last 5 records
+    OFFSET:
+        SELECT * FROM users LIMIT 5 OFFSET 0; #Return first 5 record with start index 0
+        SELECT * FROM users LIMIT 5 OFFSET 1; #Return first 5 record with start index 1
+        SELECT * FROM users ORDER BY name DESC LIMIT 5 OFFSET 1; #Return last 5 record with start index 1
+
+(14)Aggregate Functions:
+    COUNT:
+        SELECT count(name) FROM users;
+    SUM:
+        SELECT SUM(age) FROM student;
+    AVG:
+        SELECT AVG(age) FROM student;
+    MIN:
+        SELECT MIN(age) FROM student;
+    MAX:
+        SELECT MAX(age) FROM student;
+
+(15)COMMIT and ROLLBACK
+    COMMIT:
+        The COMMIT statement is used to permanently save the changes made during a transaction to the database.
+        
+    ROLLBACK:
+        The ROLLBACK statement is used to undo the changes made during a transaction and discard them.  
+
+(16)Primary key and FOREIGN key:
+
+    create table student(
+        id int not null unique,
+        name varchar(100) not null
+        city_id int null,
+        priamry key(id),
+        foriegn key(city_id) references city(cid) # city_id is refer to the table of City(id)
+    )
+
+(17)Join:
+    Joins are used to combine rows from two or more tables based on related columns between them.
+    INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN. 
+
+    INNER JOIN:
+        Returns only the rows that have matching values in both tables.
+
+        SELECT columns FROM table1 INNER JOIN table2 
+            ON table1.column = table2.column;
+
+        Example:
+
+        SELECT * FROM students INNER JOIN city 
+            ON students.city_id = city.id;
+        
+    LEFT JOIN:
+        The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2).
+        SELECT columns FROM table1 LEFT JOIN table2 
+            ON table1.column = table2.column; 
+
+        Example:
+            SELECT * FROM students LEFT JOIN city
+                ON students.city_id = city.id;
+                
+    RIGHT JOIN: 
+        Returns all rows from the right table and the matched rows from the left table.
+        Example:
+        
+        SELECT columns FROM table1 RIGHT JOIN table2 
+        ON table1.column = table2.column;
+        
+    FULL JOIN: 
+        Returns all rows from both tables, matching rows from both tables where available. 
+
+        SELECT columns FROM table1 FULL JOIN table2 
+        ON table1.column = table2.column;
+ 

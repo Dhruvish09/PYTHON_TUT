@@ -1,0 +1,66 @@
+(1)How to create Json file in django?
+(2)Decorators in django?
+(3)What is singal in django?
+
+
+(1)How to create Json file in django?
+
+import json
+from django.http import JsonResponse
+
+def create_json_file(request):
+    # Define sample data
+    data = {
+        'name': 'John Doe',
+        'age': 30,
+        'city': 'New York'
+    }
+
+    # Serialize the data to JSON format
+    json_data = json.dumps(data, indent=4)
+
+    # Define the file path where you want to save the JSON file
+    file_path = '/path/to/your/file/data.json'  # Update this with your desired file path
+
+    # Write the JSON data to the file
+    with open(file_path, 'w') as json_file:
+        json_file.write(json_data)
+
+    # Optionally, you can return a JSON response indicating the file creation status
+    return JsonResponse({'message': 'JSON file created successfully'})
+
+
+(2)Decorators in django?
+Ans:
+    Decorators in Django are typically used to modify the behavior of views, such as adding authentication checks, logging, or caching.
+
+    from functools import wraps
+    from django.http import HttpResponseForbidden
+
+    def user_authenticated(view_func):
+        @wraps(view_func)
+        def _wrapped_view(request, *args, **kwargs):
+            if request.user.is_authenticated:
+                # User is authenticated, call the original view function
+                return view_func(request, *args, **kwargs)
+            else:
+                # User is not authenticated, return a forbidden response
+                return HttpResponseForbidden("You must be logged in to access this page.")
+        return _wrapped_view
+
+(3)What is singal in django?
+Ans:
+    In Django, signals are a mechanism for allowing certain senders to notify a set of receivers when some action has taken place. 
+    This allows decoupled applications to get notified when certain actions occur elsewhere in the codebase.
+    
+    # Example
+    from django.db.models.signals import post_save
+    from django.dispatch import receiver
+    from myapp.models import MyModel
+
+    @receiver(post_save, sender=MyModel)
+    def my_handler(sender, instance, created, **kwargs):
+        if created:
+            print("A new instance of MyModel was created:", instance)
+        else:
+            print("An existing instance of MyModel was updated:", instance)

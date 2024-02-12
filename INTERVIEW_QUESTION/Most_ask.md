@@ -48,3 +48,12 @@ Ans: With methods: __enter__ and __exit__
         file.close()
 
 (10)What do you mean by OOPS?
+
+    Construcor:
+        A constructor is an instance method in a class, that is automatically called whenever a new object of the class is declared.
+        Ex:
+            The __init__() method acts as a constructor. It needs a mandatory argument self, which the reference to the object.
+
+(11)Authentication and Authorization:
+Ans:
+    Authentication verifies the identity of users, while authorization controls their access to resources. For instance, in a web application, I would use JWT (JSON Web Tokens) for authentication and role-based access control (RBAC) for authorization.

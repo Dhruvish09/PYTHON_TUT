@@ -1,0 +1,59 @@
+Pagination?:
+
+
+(1)Creat Table:
+
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class User(db.Model):
+    __tablename__ = 'users'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    password = db.Column(db.String(100))
+    mobile = db.Column(db.String(15))
+    gender = db.Column(db.Enum('M', 'F', 'O'))
+    dob = db.Column(db.Date)
+    status = db.Column(db.Boolean)
+
+(2)Select record:
+    female_users = User.query.filter_by(gender='F').all()
+
+(3)Operators:
+    IN:
+        male_and_female_users = User.query.filter(User.gender.in_(['M', 'F'])).all()
+
+    LIKE:
+        matching_users = User.query.filter(or_(User.name.ilike('%John%'), User.email.ilike('%example.com%'))).all()
+        for user in matching_users:
+            print(user.name, user.email)  # Accessing user attributes
+
+(4)ORDER BY:
+    users_ordered_by_name = User.query.order_by(User.name.asc()).all() # Return asceding order record
+    users_ordered_by_name = User.query.order_by(User.name.desc()).all() # Return descending order record
+
+(5)IS NULL and IS NOT NULL:
+    IS NULL:
+        users_with_null_mobile = User.query.filter(User.mobile == null()).all()
+    IS NOT NULL:
+        users_with_mobile = User.query.filter(User.mobile.isnot(None)).all()
+
+(6)Update and Delete:
+    Update:
+        # Update the age for the student with id=4
+        student = Student.query.filter_by(id=4).first()
+        student.age = 25
+        db.session.commit()
+    
+    Delete:
+
+        from myapp import db
+        from myapp.models import Student
+
+        # Delete the student with id=4
+        student = Student.query.filter_by(id=4).first()
+        db.session.delete(student)
+        db.session.commit()
