@@ -183,3 +183,104 @@ SELECT name as "Username",email,mobile FROM users where gender = "F";
         SELECT columns FROM table1 FULL JOIN table2 
         ON table1.column = table2.column;
  
+    SELF JOIN:
+        A SELF JOIN is used to join a table with itself. 
+
+(18)What Are ‘TRUNCATE’, ‘DELETE’ And ‘DROP’ Statements In SQL?
+    DELETE Statement:  
+    
+    DELETE removes some or all rows from a table based on the condition. 
+    It can be rolled back.
+
+    DELETE FROM Emp;
+
+    TRUNCATE Statement:   
+
+    TRUNCATE command is used to delete all the rows from the table and free the space containing the table.
+    Truncate operation cannot be rolled back.
+
+    TRUNCATE TABLE emp;
+
+    DROP Statement:
+    DROP command is used to remove an object from the database.
+    If you drop a table, all the rows in the table are deleted and the table structure is removed from the database.
+    It also cannot be retrieved back.
+
+    DROP TABLE emp;
+
+(19)What Are Constraints In SQL?
+    CONSTRAINTS:   
+        Constraints are used to specify the rules that we can apply to the type of data in a table. 
+
+    The following are the constraints in SQL:
+
+    NOT NULL - Restricts NULL value from being inserted into a column.
+    CHECK - Verifies that all values in a field satisfy a condition.
+    DEFAULT - Automatically assigns a default value if no value has been specified for the field.
+    INDEX - Indexes a field providing faster retrieval of records.
+    UNIQUE - Ensures unique values to be inserted into the field.
+    PRIMARY - Uniquely identifies each record in a table.
+    FOREIGN - Ensures referential integrity for a record in another table.
+
+(20)What Are The Subsets Of SQL? 
+Ans:
+    DDL (Data Definition Language): 
+        DDL defines the data structure. 
+        DDL deals with database schemas and descriptions of how the data should reside in the database.
+        DDL Commands: CREATE, ALTER, DROP, TRUNCATE, COMMENT, RENAME
+
+    DML (Data Manipulation Language): 
+        DML is used to store, modify, retrieve, delete and update data in a database.
+        DML deals with data manipulation of existing data in the database. 
+        DML Commands:  SELECT, INSERT, UPDATE, DELETE
+
+    DCL (Data Control Language): 
+        DCL controls access to the data stored in the database. 
+        DCL mostly concerned with rights, permissions and other controls of the database system.
+        DCL Commands:  GRANT, REVOKE
+
+    TCL (Transaction Control Language): 
+        TCL is used to deal with the transaction operations in the database. 
+        TCL Commands: COMMIT, ROLLBACK, SAVEPOINT, SET TRANSACTION
+
+(21)List Different Types Of Relationships In SQL.
+Ans:
+    One-to-One relationship - This can be defined as the relationship between two tables where each record in one table is associated with the maximum of one record in the other table.
+
+    One-to-Many & Many-to-One relationships - This is the most commonly used relationship where a record in a table is associated with multiple records in the other table.
+
+    Many-to-Many relationship- This is used in cases when multiple instances on both sides are needed for defining a relationship.
+
+    Self-Referencing Relationships - This is used when a table needs to define a relationship with itself.
+
+(22)What Is RDBMS? How Is It Different From DBMS?
+Ans:
+    RDBMS: 
+
+        RDBMS stands for Relational Database Management System that stores data in the form of a collection of tables, and relations can be defined between the common fields of these tables.
+
+        It also provides relational operators to manipulate the data stored into the tables.
+
+        Examples of relational database management systems are Microsoft Access, MySQL, SQL Server, Oracle database, etc.
+
+(23)Is A Blank Space or Zero Same As A NULL Value?
+Ans:
+    No. The NULL value is not the same as zero or a blank space. 
+    The following points explain their main differences:
+
+    A NULL value is a value, which is 'unavailable, unassigned, unknown or not applicable.' It would be used in the absence of any value. We can perform arithmetic operations on it. 
+    On the other hand, zero is a number, and a blank space is treated as a character.
+
+    In SQL, zero or blank space can be compared with another zero or blank space. whereas one null may not be equal to another null. null means data might not be provided or there is no data.
+
+(24)What Is Normalization? What Are The Various Forms Of Normalization?
+Ans:
+    Generally, in a table, we will have a lot of redundant information which is not required, so it is better to divide this complex table into multiple smaller tables which contains only unique information.
+
+    The process of table design to minimize the data redundancy is called normalization.
+
+(25)What Is Denormalization?
+Ans:
+    Denormalization is the inverse process of normalization, where the normalized schema is converted into a schema that has redundant information. 
+
+    Denormalization is a technique used to access the data from higher to lower normal forms of database.

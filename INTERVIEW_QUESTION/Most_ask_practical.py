@@ -12,6 +12,7 @@
 (11)Find the Most Frequent Character in a String?
 (12)Find Non-Repetitive Elements in a List Without Using Count?
 (13)Find Maximum and Minimum Values in a List?
+(14)Remove duplicate value from dictionarry
 
 '''
 
@@ -290,3 +291,18 @@ del my_dict['b']
 
 print("Dictionary after modifications:", my_dict)
 
+
+#Remove duplicate values in dictionary
+test_dict = {'gfg': 10, 'is': 15,'best': 20, 'for': 10, 'geeks': 20}
+
+def removeduplicatefromdict(dict):
+    new_list = []
+    new_dict = {}
+    for key,value in dict.items():
+        if value not in new_list:
+            new_dict[key] = value
+            new_list.append(value)
+
+    return new_dict
+
+print("Dictionary after remove duplicate value:",removeduplicatefromdict(test_dict))

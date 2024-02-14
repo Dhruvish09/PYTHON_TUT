@@ -64,3 +64,126 @@ Ans:
             print("A new instance of MyModel was created:", instance)
         else:
             print("An existing instance of MyModel was updated:", instance)
+
+(4)How can you combine multiple querysets in a view?
+
+(5)Expalin Django Architecture?
+
+(6)Proccess of handling request in Django?
+Ans:
+    User-Request:    manage.py -> settings.py -> urls.py -> views.py -> models.py -> template
+
+(7)Why django is loosely couple?
+Ans:
+    Django is called a loosely coupled framework because of its MVT architecture
+
+(8)Migration in django?
+Ans:
+    Migration in Django is to make changes to our models like deleting a model, adding a field, etc. into your database schema.
+
+    makemigration - This command is used to create a migration file.
+    migrate - This command creates a table according to the schema defined in migration file.
+    showmigrations - This command list all the migrations and their status.
+    sqlmigrate - This command is used to show a raw SQL query of the applied migration.
+
+(9)What is CSRF?
+Ans:
+    CSRF stands for Cross Site Request Forgery. 
+    The csrf_token is used for protection against Cross-Site Request Forgeries.
+
+(10)What Is A QuerySet In Django?
+Ans:
+    A QuerySet in Django is basically a collection of objects from our database.
+
+(11)What Is The Difference Between select_related & prefetch_related?
+Ans:
+    select_related:
+        Return data with aplly inner join in single hit.
+
+(12)What Is The Difference Between Flask, Pyramid And Django?
+Ans:
+    Flask is a "microframework" primarily build for a small application with simpler requirements. In flask, you have to use external libraries. Flask is ready to use.
+
+    Pyramid are build for larger applications. It provides flexibility and lets the developer use the right tools for their project. The developer can choose the database, URL structure, templating style and more. Pyramid is heavy configurable.
+
+    Django can also used for larger applications. It includes an ORM.
+
+(13)Explain Django Admin & Django Admin Interface.
+Ans:
+    Django Admin Panel:
+        Django admin panel is a kind of graphical user interface that is used for administrative tasks. 
+        Django comes with a fully customizable in-built admin interface.
+        Managing multiple models and permissions.
+
+    Django-admin:
+        It  is the command-line utility of Django for administrative tasks. 
+        django-admin startapp
+        django-admin test
+        django-admin migrate
+
+(14)WHat is the django short-cut method to more easily render an html response?
+Ans:
+    render_to_response
+
+(15)Explain Q objects in Django ORM?
+Ans:
+    Q object django.db.models.Q is an object to encapsulate a collection of keyword arguments specified as FIELD LOOKUPS.
+    Q objects are used to write complex queries, as in filter() functions just "AND" the conditions while if you want to "OR" the conditions you can use Q objects. 
+
+    from django.db import models
+from django.db.models import Q
+
+Ex:
+Models.objects.get( Q(question__startswith='When'), Q(answer__startswith='On')  | Q(answer__startswith='At') )
+
+
+(16)What Is The Significance Of manage.py File In Django?
+Ans:
+    The manage.py file is automatically generated whenever you create a project. 
+    This is basically a command-line utility that helps you to interact with your Django project in various ways.
+
+(17)What Is A Middleware In Django?
+Ans:
+    Middleware is something that executes between the request and response. 
+    In simple words, you can say it acts as a bridge between the request and response. 
+
+    MIDDLEWARE = [  
+    'django.middleware.security.SecurityMiddleware',  
+    'django.contrib.sessions.middleware.SessionMiddleware',  
+    'django.middleware.common.CommonMiddleware',  
+    'django.middleware.csrf.CsrfViewMiddleware',  
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  
+    'django.contrib.messages.middleware.MessageMiddleware',  
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',  
+    ]  
+
+(18)What Is Sessions In Django?
+Ans:
+    Sessions are the mechanism used by Django for keeping track of the "state" between the site and a particular browser.
+
+(19)What Are Django Exceptions?
+Ans:
+    In Django, exceptions are errors or unexpected conditions that occur during the execution of a web application built with Django framework.
+    Django provides a variety of built-in exceptions that cover different aspects of web development, ranging from database errors to HTTP-related errors.
+
+(20)What Is The Difference Between Django OneToOneField & ForeignKey Field?
+Ans:
+
+
+(21)Explain Django Field Class And Its Types?
+Ans:
+
+(22)What is jinja templating?
+Ans:
+
+(23)What is Serialization?
+Ans:
+    Serialization is the process of converting Django models into other formats such as XML, JSON, etc.
+
+(24)What Are Generic Views?
+Ans:
+
+(25)What Is Mixin?
+Ans:
+    
+(26)What is chaching?

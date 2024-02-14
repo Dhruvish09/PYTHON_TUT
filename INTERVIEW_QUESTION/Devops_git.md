@@ -1,3 +1,5 @@
+zero downtime deployment?
+
 (1)What is aws lambda?
 Ans:  AWS Lambda is a serverless compute service provided by Amazon Web Services (AWS). It allows you to run code without provisioning or managing servers. With Lambda, you can upload your code and AWS takes care of everything required to run and scale your code with high availability.
 

@@ -23,7 +23,7 @@ class Collage:
         self.name = data["name"]
         self.age = data["age"]
 
-data_list = [{"name":"Dhruvidh","age":24},{"name":"Tirth","age":25}]
+data_list = [{"name":"Dhruvish","age":24},{"name":"Tirth","age":25}]
 
 data = [Collage(data) for data in data_list]
 

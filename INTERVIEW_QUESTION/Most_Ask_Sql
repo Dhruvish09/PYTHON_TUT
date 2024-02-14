@@ -1,0 +1,140 @@
+(1)What Is The SQL Query Used For Creating a Database And a Table?
+
+(2)What Is The SQL Query Used To Create A Table With Same Structure Of Another Table?
+Ans:
+    CREATE TABLE department_copy as (SELECT * FROM department WHERE 1=2);
+
+(3) What Is The SQL Query Used To Create A Table With Same Structure With Data Of Another Table
+Ans: 
+    CREATE TABLE Emp SELECT * FROM Employee;
+
+(4)What Is The SQL Query Used To Find The 2nd / 3rd / nth Highest Salary?
+Ans:   
+    SELECT MAX(Salary) FROM Employee
+    WHERE Salary<(SELECT MAX(Salary) FROM Employee
+    WHERE Salary<(SELECT MAX(Salary) FROM Employee));
+
+    or 
+
+    SELECT Salary FROM Employee 
+    ORDER BY Salary DESC
+    LIMIT 1 OFFSET 2;
+
+
+(5)What Is The SQL Query Used To Find All Employees Who Also Hold The Managerial Position?
+Ans: 
+    SELECT * FROM EMPLOYEES 
+    WHERE (EMPLOYEE_ID IN (SELECT MANAGER_ID FROM EMPLOYEES));
+
+(6)What Is The SQL Query Used To Find The Names Of  The Employees That Begin With ‘A’?
+Ans:
+    SELECT Name FROM Employee WHERE Name LIKE 'A%';
+
+(7)What Is The SQL Query Used To Display  The Current Date?
+Ans:    
+    SELECT CURRENT_DATE();
+
+(8)What Is The SQL Query Used To Fetch Alternate Records From A Table?
+Ans:    
+    SELECT * FROM Employee WHERE id%2=0;
+
+(9)What Is The SQL Query Used To Fetch The Common Records From Two Tables?
+Ans:
+    SELECT * FROM Employee
+    INNER JOIN Emp ON Employee.ID = Emp.ID;
+
+(10)What Is The SQL Query Used To Remove The Duplicate Rows In Table?
+Ans:
+    DELETE E1 FROM EMPLOYEE E1
+    INNER JOIN EMPLOYEE E2 
+    WHERE 
+        E1.id < E2.id AND 
+        E1.Name = E2.Name;
+
+(11)What Is The SQL Query Used To Find  The nth Record From A Table?
+Ans:
+    SELECT * FROM Employee  LIMIT 1 OFFSET 10;
+
+(12)What Is The SQL Query Used To Find The First 5 Records From A Table?
+Ans:
+    SELECT * FROM Employee ORDER BY ID LIMIT 5;
+
+(12)What Is The SQL Query Used To Find The Last 5 Records From A Table?
+
+Ans:
+    SELECT * FROM Employee ORDER BY ID DESC LIMIT 5;
+    
+    OR
+
+    (SELECT * FROM Employee ORDER BY ID DESC LIMIT 5) ORDER BY ID ASC;
+
+    OR
+
+    SELECT * FROM Employee WHERE ID > (SELECT MAX(ID) - 5 FROM Employee);
+
+(13)What Is The SQL Query Used To Find The First Or Last Record From A Table?
+Ans:
+    To Find First Record:-
+    
+        SELECT *  FROM employee  LIMIT 1;
+   
+        SELECT * FROM Employee 
+        WHERE ID=(SELECT min(ID) FROM Employee);
+
+
+    To Find Last Record:-
+
+        SELECT *  FROM Employee ORDER BY ID desc LIMIT 1;
+
+        SELECT * FROM Employee
+        WHERE ID=(SELECT max(ID) FROM employee);
+
+(14)What Is The SQL Query Used To Find The Distinct Records Without Using Distinct Keyword?
+Ans:
+    USING DISTINCT KEYWORD:
+
+    SELECT DISTINCT dept_id FROM Employee;
+
+    USING GROUP BY:
+
+    SELECT dept_id FROM Employee GROUP BY dept_id;
+
+    USING UNION BY:
+
+    SELECT dept_id FROM Employee UNION SELECT dept_id FROM Employee;
+
+(15)What Is The SQL Query Used To Find The Maximum Salary Of Each Department?
+Ans:
+    SELECT dept_id, MAX(salary) FROM Employee 
+    GROUP BY dept_id;
+
+(16)What Is The SQL Query Used To Find The Department-Wise Count Of Employees Sorted By
+    Department’s Count In Ascending Order?
+Ans:
+    SELECT dept_id, COUNT(dept_id) as Count FROM Employee
+    GROUP BY dept_id
+    ORDER BY COUNT(dept_id);
+
+(17)How Will You Change The Datatype Of A Column?
+Ans:
+    ALTER TABLE Employee MODIFY manager_id BIGINT;
+
+(18)What Is The Difference Between Unique Key,Primary key And Foreign key?
+Ans:
+    Unique key:- 
+
+    The role of the Unique key is to make sure that each column and row are unique.
+    The Unique key cannot accept the duplicate values.
+    It can accept a null value but only one null value per column.
+
+    PRIMARY KEY:
+
+    Primary Key = UNIQUE + NOT NULL
+
+    FOREIGN KEY:
+
+    The foreign key is used to link one or more tables together. It is also known as the Referencing Key.
+
+(19)
+
+

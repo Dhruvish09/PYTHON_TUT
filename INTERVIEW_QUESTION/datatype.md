@@ -27,3 +27,20 @@ new_list = []
 result = [new_list.append(x) for x in my_list if x not in new_list]
 
 print(my_list)
+
+(3)
+
+# test_dict = {'gfg': 10, 'is': 15, 'is': 15,'best': 20, 'for': 10, 'geeks': 20}
+# print("test_dict:",test_dict)
+
+# def removeduplicatefromdict(dict):
+#     new_list = []
+#     new_dict = {}
+#     for key,value in dict.items():
+#         if value not in new_list:
+#             new_dict[key] = value
+#             new_list.append(value)
+
+#     return new_dict
+
+# print(removeduplicatefromdict(test_dict))
