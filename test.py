@@ -132,13 +132,81 @@
 # (13)Find Maximum and Minimum Values in a List?
 
 
-def is_palindrome(num):
-    name = str(num)
-    length = len(name)
+# Python3 code to demonstrate working of
+# Remove duplicate values in dictionary
+# Using loop
 
-    for  i in range(length):
-        if name[i] != name[length-i-1]:
-            return False
-    return True
+# # initializing dictionary
+# test_dict = {'gfg': 10, 'is': 15, 'best': 20, 'for': 10, 'geeks': 20}
 
-print(is_palindrome(121))
+# # printing original dictionary
+# print("The original dictionary is : " + str(test_dict))
+
+# Remove duplicate values in dictionary
+# Using loop
+# temp = []
+# res = dict()
+
+# for key, val in test_dict.items():
+
+# 	if val not in temp:
+# 		temp.append(val)
+# 		res[key] = val
+
+# # printing result
+# print("The dictionary after values removal : " + str(res))
+
+
+# test_dict = {'gfg': 10, 'is': 15, 'is': 15,'best': 20, 'for': 10, 'geeks': 20}
+# print("test_dict:",test_dict)
+
+# def removeduplicatefromdict(dict):
+#     new_list = []
+#     new_dict = {}
+#     for key,value in dict.items():
+#         if value not in new_list:
+#             new_dict[key] = value
+#             new_list.append(value)
+
+#     return new_dict
+
+# print(removeduplicatefromdict(test_dict))
+
+# (1)Swap Two Elements in a List Using enumerate
+
+
+
+
+# my_list = [1, 2, 4, 3, 5, 6, 2, 9, 9, 4, 2, 5, 7, 8]
+# my_dict = {'gfg': 10, 'is': 15, 'best': 20, 'for': 10, 'geeks': 20}
+
+# new_dict = {}
+# new_list = []
+
+# for key,value in my_dict.items():
+#     if value not in new_list:
+#         new_dict[key] = value
+#         new_list.append(value)
+
+# print(new_dict)
+
+
+class Collage:
+    def __init__(self,name,location):
+        self._name = name
+        self._location = location
+        
+    def get_collage(self):
+        print(f"COllage name is {self._name} and which is locate at {self.location}")
+
+class student(Collage):
+    def __init__(self, name, location,student_name):
+        super().__init__(name, location)
+        self.student_name = student_name
+
+    def get_student_info(self):
+        print(f"Name of the collage is {self._name} and locat at {self._location} where student name is {self.student_name}")
+
+
+info  = student("SPEC","Ahmedabad","Dhruvish patel")
+info.get_student_info()

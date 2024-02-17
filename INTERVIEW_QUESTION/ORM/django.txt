@@ -64,3 +64,6 @@ class YetAnotherModel(models.Model):
 
     Delete:
         Student.objects.filter(id=4).delete()
+
+(7)# Using Django ORM to perform GROUP BY and HAVING
+    result = Order.objects.values('customer_id').annotate(total_quantity=Sum('quantity')).filter(total_quantity__gt=100)

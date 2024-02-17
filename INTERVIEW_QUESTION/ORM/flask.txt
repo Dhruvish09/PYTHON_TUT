@@ -57,3 +57,8 @@ class User(db.Model):
         student = Student.query.filter_by(id=4).first()
         db.session.delete(student)
         db.session.commit()
+
+(7)# Simple query for GROUP BY and HAVING
+    query = db.session.query(Order.customer_id, func.sum(Order.quantity).label('total_quantity')) \
+                 .group_by(Order.customer_id) \
+                 .having(func.sum(Order.quantity) > 100)

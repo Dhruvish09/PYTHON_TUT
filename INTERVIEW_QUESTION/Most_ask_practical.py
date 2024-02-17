@@ -125,7 +125,7 @@ print("Every 3rd element in the list:", result) # Output [54,5,3] return all ele
 # Modify a string by excluding characters at specified indices
 string_value = str(input("Enter your string: "))
 index_value = int(input("Enter your index: "))
-new_string = string_value.split()
+new_string = list(string_value)
 modified_string = [value for index, value in enumerate(new_string, start=1) if index % index_value != 0]
 print("Modified string:", ' '.join(modified_string)) # return element with remove provided index value
 
@@ -306,3 +306,51 @@ def removeduplicatefromdict(dict):
     return new_dict
 
 print("Dictionary after remove duplicate value:",removeduplicatefromdict(test_dict))
+
+my_list = [1, 2, 4, 3, 5, 6, 2, 9, 9, 4, 2, 5, 7, 8]
+
+new_list = []
+for i in my_list:
+    if i not in new_list:
+        new_list.append(i)
+
+print(new_list)
+
+
+# Flatter list in list
+my_list = [1,2,3,[4,5,6],[7,8,9]]
+new_list = []
+
+for i in my_list:
+    if type(i) is list:
+        for items in i:
+            new_list.append(items)
+    else:
+        new_list.append(i)
+
+print("Flatter list:",new_list)
+
+# Flatter dictionary in single dictionary
+def flatten_dict(d):
+    flattened_dict = {}
+    for key, value in d.items():
+        if isinstance(value, dict):
+            for sub_key, sub_value in value.items():
+                flattened_dict[key + '_' + sub_key] = sub_value
+        else:
+            flattened_dict[key] = value
+    return flattened_dict
+
+# Your original nested dictionary
+nested_dict = {
+    "Name": "DHRUVISH",
+    "AGE": 21,
+    "CITY": {
+        "AMD": "Ahmedabad",
+        "VD": "Vadodara"
+    }
+}
+
+# Flatten the dictionary
+flattened_dict = flatten_dict(nested_dict)
+print(flattened_dict)
