@@ -1,0 +1,27 @@
+how the migration work?
+How Django Detects Changes to Your Models?
+how the orm work?
+which query is better orm or sql?
+draw back and advantages of orm?
+types of orm? 
+which kind of type DJango orm?
+loading in sql?
+indexing in sql?
+jwt is secure or not?
+	jwt is secure because in jwt we are provide expired time and refresh token double check functinallity.If some one get jwt token and try to decode that jwt token from jwt
+how jwt work?
+why we are using 2 ports in docker run. Ex: docker run 5000,3300
+HttpResponse vs JsonResponse
+Signal in django?
+how to work networking?
+how middelware is working?
+what is csrf token? and how it's work?
+what caching?
+	catching is used for make the process fast.like if we are first time serving example.html file then this content store in catch memory.once use will serve this page again then it's getting fast 	serve from catch memory.In sort it's take short time for getting data.
+
+
+prefetch_related vs select related?:
+	Both query are almost same in select related is used for get data with join 
+	where prefetch_related is reverse process of selecte_related join.
+
+ 
