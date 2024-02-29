@@ -190,23 +190,20 @@
 
 # print(new_dict)
 
-
 class Collage:
-    def __init__(self,name,location):
-        self._name = name
-        self._location = location
-        
-    def get_collage(self):
-        print(f"COllage name is {self._name} and which is locate at {self.location}")
+    def __init__(self) -> None:
+        self._name = "ABC"
+        self.address = "XYZ"
 
-class student(Collage):
-    def __init__(self, name, location,student_name):
-        super().__init__(name, location)
-        self.student_name = student_name
+    def get_info(self):
+        print(f"Your name is {self._name}")
+
+class Student(Collage):
+    def __init__(self):
+        super().__init__()
 
     def get_student_info(self):
-        print(f"Name of the collage is {self._name} and locat at {self._location} where student name is {self.student_name}")
+        print(f"Student name is {self._name}")
 
-
-info  = student("SPEC","Ahmedabad","Dhruvish patel")
-info.get_student_info()
+o1 = Student()
+print(o1.get_student_info)

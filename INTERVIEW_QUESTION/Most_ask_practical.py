@@ -58,12 +58,15 @@ def recur_fibonacci(n):
         return n
     else:
         return recur_fibonacci(n - 1) + recur_fibonacci(n - 2)
-
-# Example usage:
-n = 10  # You can change this to the desired position in the Fibonacci series
-result = recur_fibonacci(n)
-print(f"The {n}th Fibonacci number is: {result}")
-
+    
+n = 10
+# Check if the number of terms is valid
+if n <= 0:
+    print("Please enter a positive integer")
+else:
+    print("Fibonacci sequence:")
+    for i in range(n):
+        print(recur_fibonacci(i))
 
 ''' (3)Short a dict with dict comprehension? '''
 

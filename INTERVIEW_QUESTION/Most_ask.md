@@ -205,3 +205,7 @@ Ans:
 
     On the server side, the application checks the submitted CSRF token against the expected value. If the token is missing or incorrect, the server rejects the request.
     
+(23)Why Functions?
+Ans:
+    Abstraction and Reusability and extensibility.
+    
