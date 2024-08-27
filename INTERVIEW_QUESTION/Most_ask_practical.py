@@ -2,17 +2,69 @@
 (1)Number or string is Palindrome or not?
 (2)Generate an Infinite Fibonacci Series using Generator
 (3)Generate an Infinite Fibonacci Series using Recursion
-(4)Short a Dictionary with Dictionary Comprehension
-(5)Short a List without Using the Sort Keyword
-(6)Manipulate on String and List
-(7)Python Program to Swap Two Numbers without Using a Third Variable
-(8)Find Prime Numbers Between 0 and 100
-(9)Find the Smallest Positive Number in a List
-(10)Find the Factorial of a Number?
-(11)Find the Most Frequent Character in a String?
-(12)Find Non-Repetitive Elements in a List Without Using Count?
-(13)Find Maximum and Minimum Values in a List?
-(14)Remove duplicate value from dictionarry
+(4)Generate a fibonaaci series by using list equation?
+(5)Short a Dictionary with Dictionary Comprehension
+(6)Short a List without Using the Sort Keyword
+(7)Manipulate on String and List
+(8)Python Program to Swap Two Numbers without Using a Third Variable
+(9)Find Prime Numbers Between 0 and 100
+(10)Find the Smallest Positive Number in a List
+(11)Find the Factorial of a Number?
+(12)Find the Most Frequent Character in a String?
+(13)Find Non-Repetitive Elements in a List Without Using Count?
+(14)Find Maximum and Minimum Values in a List?
+(15)Remove duplicate value from dictionarry
+(16)Find requried output in string:-
+        # Input = "The sky is blue"
+        # Output = "blue is sky the" 
+
+(17)List programs
+    my_list = [1, 2, 3, 4, 5]
+    #Modify List by Inserting Element at Specific Index
+
+    # Add an element at a specific index
+
+    # Remove an element by value
+
+    # Remove an element by index
+
+(18 )String programs
+    my_string = "hello"
+
+    # Add a character at the end of the string
+ 
+    # Add a character at a specific index
+
+    # Remove the last character
+
+    # Remove a character at a specific index
+
+(19)Dict programs
+
+    test_dict = {'gfg': 10, 'is': 15,'best': 20, 'for': 10, 'geeks': 20}
+
+    # Add a new key-value pair
+
+    # Remove a key-value pair by key
+
+    #Remove duplicate values in dictionary
+
+(20)Flatter list in list
+    my_list = [1,2,3,[4,5,6],[7,8,9]]
+
+
+(21)Flatter dictionary in single dictionary
+
+    nested_dict = {
+        "Name": "DHRUVISH",
+        "AGE": 21,
+        "CITY": {
+            "AMD": "Ahmedabad",
+            "VD": "Vadodara"
+        }
+    }
+
+(22) Preventing Multiple Consecutive Calls to a Function in 
 
 '''
 
@@ -246,7 +298,6 @@ for i in my_list:
 print(f"Maximum: {maximum} Minimum:{minimum}")
 
 
-
 '''List programs'''
 #Modify List by Inserting Element at Specific Index
 
@@ -357,3 +408,58 @@ nested_dict = {
 # Flatten the dictionary
 flattened_dict = flatten_dict(nested_dict)
 print(flattened_dict)
+
+
+# Preventing Multiple Consecutive Calls to a Function in Python
+
+def my_function(a, b, c):
+    global call_count
+    if call_count >= 1:
+        raise ValueError("Function can only be called once")
+    call_count += 1
+    return a + b + c
+
+# Initializing the call_count
+call_count = 0
+
+# Testing the function
+try:
+    print(my_function(1, 2, 3))  # First call
+    print(my_function(4, 5, 6))  # Second call
+except ValueError as e:
+    print("Error occurred:", e)
+
+
+def fibbo(n):
+    new = [0,1]
+    for i in range(n):
+        if i < 2:
+            pass
+        else:
+            sum = new[-2] + new[-1]
+            new.append(sum)
+
+    return new
+    # return new[::-1] #Revese series
+
+
+print(fibbo(5))
+
+
+
+def fibbo_recur(n):
+
+    if n < 2:
+        return n
+    else:
+        return fibbo(n-1) + fibbo(n-2)
+    
+new = [0,1]
+for i in range(2,5):
+
+    s1 = fibbo_recur(i)
+    new.append(s1)
+
+print(new)
+
+# Genrate randome NUmber

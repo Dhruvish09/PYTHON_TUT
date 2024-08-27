@@ -1,3 +1,6 @@
+# keys,values,items,get
+# update,copy,pop,popitem
+
 #The copy() method returns a copy of the specified dictionary.
 print("1:")
 car = {

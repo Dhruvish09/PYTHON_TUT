@@ -69,9 +69,9 @@ def download_file(url):
 def download_files_multithreading():
     # List of file URLs to download
     file_urls = [
-        "https://www.example.com/file1.txt",
-        "https://www.example.com/file2.txt",
-        "https://www.example.com/file3.txt"
+        "https://www.example.com/file1.html",
+        "https://www.example.com/file2.html",
+        "https://www.example.com/file3.html"
     ]
 
     # Using ThreadPoolExecutor to download files concurrently

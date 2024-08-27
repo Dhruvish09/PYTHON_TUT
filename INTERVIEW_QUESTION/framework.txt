@@ -98,8 +98,15 @@ Ans:
 (11)What Is The Difference Between select_related & prefetch_related?
 Ans:
     select_related:
-        Return data with aplly inner join in single hit.
+        select_related() is used for single objects and forward relationships.
+        Optimizes queries involving forward relationships, such as ForeignKey fields on the current model.
+        It's best used when the related data is small and will be accessed frequently.
 
+    prefetch_related:
+        prefetch_related() is used for many objects and reverse relationships.
+        Optimizes queries involving reverse relationships, such as ForeignKey, OneToOneField, and ManyToManyField.
+        It's best used when the related data is large or will only be accessed occasionally
+        
 (12)What Is The Difference Between Flask, Pyramid And Django?
 Ans:
     Flask is a "microframework" primarily build for a small application with simpler requirements. In flask, you have to use external libraries. Flask is ready to use.
@@ -180,13 +187,30 @@ Ans:
 Ans:   
     Serialization in Django refers to the process of converting complex data types, such as querysets or model instances, into native Python data types that can be easily rendered into JSON, XML, or other content types.
     Ex:
-        def get(self, request):
-            books = Book.objects.all()
-            serializer = BookSerializer(books, many=True)
-            return Response(serializer.data)
+        # Serializing a queryset or model instance
+        book = Book.objects.get(pk=1)
+        serializer = BookSerializer(book)
+        serialized_data = serializer.data
+        print(serialized_data)
+
     Deserialization is process of converting JSON, XML, or other content types in to querysets or model instances.
     Ex:
-        serializer.save()
+        data = {'title': 'Sample Title', 'author': 'Sample Author', 'publication_date': '2024-03-19'}
+        serializer = BookSerializer(data=data)
+        if serializer.is_valid():
+            book_instance = serializer.save()
+            print("Saved book:", book_instance)
+        else:
+            print("Errors:", serializer.errors)
+
+    There are types of Serializers:
+        (1)ModelSerializer:
+            It automatically generates serializer fields based on the fields of a Django model.
+
+        (2)HyperlinkedModelSerializer:
+            It's useful for creating hypermedia APIs where clients navigate between resources using links.
+        (3)BaseSerializer:
+            It's typically used when creating custom serializers with highly specialized requirements.
 
 (24)What Are Generic Views and API View?
 Ans:
@@ -267,9 +291,88 @@ Ans:
     Object-level permissions: Django supports object-level permissions, which allow developers to define custom access control rules based on the properties of individual model instances. Developers can implement object-level permissions by overriding the has_perm() method on model instances or by using third-party packages such as django-guardian.
     Custom permission checks: Developers can implement custom permission checks by defining custom authorization logic in view functions or by subclassing Django's permission classes (BasePermission, Permission, ModelPermission, etc.). Custom permission checks provide flexibility to implement complex access control rules tailored to the specific requirements of an application.
 
+(28)permission class?
+Ans:
+    Django Rest Framework (DRF), permissions are used to control access to different parts of your API. They determine whether a user is allowed to perform a certain action on a particular resource. 
 
+    Built-in permission classes: DRF comes with several built-in permission classes that you can use to control access to your API views. Some of the common built-in permission classes include:
 
+        AllowAny: The AllowAny permission class will allow unrestricted access, regardless of if the request was authenticated or unauthenticated
+        IsAuthenticated: Allows access only to authenticated users.
+        IsAdminUser: Allows access only to admin users.
+        IsAuthenticatedOrReadOnly: Allows read access to unauthenticated users and write access to authenticated users only.
 
+(29)Throttling
+Ans:
+    Throttling in Django Rest Framework (DRF) is a mechanism used to limit the number of requests that a client can make to an API within a certain period of time. Throttling helps prevent abuse and ensures fair usage of the API's resources. 
+
+    (1)AnonRateThrottle: This throttle class is used to limit the rate of requests from unauthenticated users. You can specify the rate limit as the number of requests allowed per minute, hour, or day.
+
+    (2)UserRateThrottle: Similar to AnonRateThrottle, but this class limits the rate of requests for authenticated users. You can set different rate limits based on the authenticated user's ID or any other attribute.
+
+    (3)ScopedRateThrottle: This throttle class allows you to set different rate limits for different groups of users or views. You can define custom scope names for different views or groups of views, and then set rate limits for each scope.
+    
+
+(30)values and value_list:
+Ans:
+    In Django's ORM (Object-Relational Mapping), values() and values_list() are query set methods used to retrieve data from the database in a specific format.
+    
+    Values:
+        The values() method returns a QuerySet that returns dictionaries.
+
+    Value_list: 
+        The values_list() method returns a QuerySet that returns tuples   
+    
+
+(31)APIView vs Viewset?
+Ans:
+    APIView is the functional base view and responds to a single HTTP request.
+    Viewset handles multiple HTTP requests.
+
+(32)Signal vs Celary?
+
+(33)Celary workers vs Celary beat?
+
+(34)What is Template Inheritance?
+Ans:
+    Jijna template --> where we are create idivudal file instead of create seprate file for header,foot,main etc and inherit in other page for use directly.
+
+(35)What does url_for do in Flask?
+Ans:
+    The url_for() method is used to generate a URL to a specific function dynamically. 
+
+(36)How do you handle cookies in a Flask?
+Ans:
+    The set_cookie() method on the response object in Flask is used to set cookies.
+
+(37)Can you name some companies that use Django?
+Ans:    
+    DISCUS, Instagram, Mozilla Firefox, Pinterest, Reddit, YouTube
+
+(38)Why do web developers prefer Django?
+Ans: 
+    Allows code modules to be divided into logical groups, making them flexible to change
+    Provides an auto-generated web admin module to ease website administration
+    Provides a pre-packaged API for common user tasks
+    Enables developers to define a given function’s URL
+    Allows users to separate business logic from the HTML
+    Is written in Python, one of the most popular programming languages available today
+    Gives you a system to define the HTML template for your web page, avoiding code duplication
+
+(39) Does Django have any drawbacks?
+Ans:
+    Everything hinges on Django’s ORM (Object-Relational Mapping).
+    Everything must be explicitly defined due to a lack of convention.
+    Its monolithic size makes it unsuitable for smaller projects.
+
+(40)List several caching strategies supported by Django?
+Ans:
+    Database caching
+    In-memory caching
+    File System Caching
+    Memcached 
+
+(41)
 
     Advanced:
 

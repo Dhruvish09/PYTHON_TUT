@@ -1,0 +1,6 @@
+(1)Bank Management system in python core
+(2)Mapping 2 lists of dictionary like salary_data = [{},{}] and Payment_data = [{},{}] 
+(3)Todo List Rest api
+    Use already create api for get data and create data in that API.
+
+    

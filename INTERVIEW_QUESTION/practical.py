@@ -134,6 +134,7 @@ else:
   print("Not Palindrome")
 
 # (4)Write a program to check if the given number is Armstrong or not.
+# For example, 153 is an Armstrong number because 153 = qube of 1 + qube of 5 + qube of 3 = 153
 num = int(input("Enter a number for armstrong checking: "))
 # Input: 407
 sum = 0

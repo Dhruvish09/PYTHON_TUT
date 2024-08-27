@@ -1,0 +1,102 @@
+Technical Round Question:-
+
+
+(1)Why should we hire you?
+Ans:
+    say about your skills and self plus points
+
+    from your the job description, I noticed that you are looking fot someone who i good with python,django,aws and communication skills, which is why i am a pergect fit for the job.
+    I am an effective communicators skilled in giving presentations, communicating vie email. I am even proficient in using number of software systems requried to keep track of data.
+
+    At my last job, while i was the software developer of the organization i participant in hackathon where we created smart trolly. I ensure there are no conflict i manage my team with collbration of backend with deveops and fronend team and at the end of the compitation we were secure the 2nd position and get recommdation from out vp.
+
+(2)why do you join this company?
+Ans:
+    Say about company plus point
+
+(3)What do you know about this company?
+Ans:
+
+(4)What are your strenght and wikeness?
+Ans:
+    1. Do you accept your weaknesses?
+    2. Have you learnt from your weaknesses?
+    3. Do your strengths align with the job description?
+
+    strenght:
+        Flexibility, Adaptability, Team player, Motivated, Committed, Quick learner
+
+    My greatest strength is flexibility to handle changes.As developer at my last job I was able to adapt quickly stories and development and work with team.
+
+    Weaknesses:-
+        Time management, Procrastination, Delegating work, Asking for help
+
+
+
+(5)What motivate you work?
+ANs:
+
+(6)What is your biggesst achivement till date?
+Ans:
+
+(7)How to handle work pressur?
+Ans:
+
+(8)How to traine your junier?
+Ans:
+
+(9)What is your role and day to day responsiblity?
+Ans:
+
+(10)Why do you belive that you are good fit for this position?
+    
+(11)Can you explain a gap in your resume?
+Ans:
+
+(12)What is your salary expectation?
+Ans:
+
+(13)Why are you looking for a change?
+Ans:
+
+
+(14)What are your short term and long term goal?
+Ans:
+    Actually, my short-term goal is to crack this interview and get placed in this company where I can learn many skills and practical experience.
+    I want to settle down in the new work environment as quickly as I can.It is necessary to adapt oneself to a new environment for better performace.
+    
+    My long-trm goal is to become a more responsibile and knowledgeable personality and achive a good position in oraganization.
+
+(15)Do you have any question?
+Technical Round Question ask to interviewer by Candidate:-
+
+Ans:
+    (1)What are the day to day responsibility of this position?
+    (2)What is the primary responsibility of this position?
+    (3)What are the immediate projects that need to be addressed?
+    (4)Can you show me some of the exaple of the projects i would be working on?
+    (5)What trainning programs are available to the employee?
+    (6)Can you tell me more about the project and the team I would be working in?
+    (7)How many people will be working with?
+    (8)What kind of processes and the technologies you use to work collaboratively?
+    (9)Do you see the expanding role in the future?
+
+
+HR Round Question ask to HR from Candidate:-
+
+(1)What is the next step in the hiring processe?
+(2)What is the work culture life here?
+(3)Is there anything concerns you about my background being a fit for this role?
+(4)I have already read about company's founding, but can you please tell me more about it?
+(5)Can you please tell me more about the work environment- Is it typically collabrative or typically independent?
+(6)Would i need for travell for this position?
+
+
+Negative Question which never ask by Candidate:-
+
+(1)How did i do in this interview?
+(2)When do you plan on making someone an offer to this job?
+(3)What does this company actually do?
+(4)Did i get this job?
+(5)How soon i can request for vacation time after joing your company?
+

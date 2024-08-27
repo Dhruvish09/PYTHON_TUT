@@ -21,6 +21,10 @@ Ans:
 Ans:
     Interpreted means code run line by line.In interpreted language directly compile code convert into machine code. 
 
+    First of all, the interpreter checks if all subsequent lines are correct (using the four aspects covered earlier).
+
+    If the compiler finds an error, it finishes its work immediately. The only result in this case is an error message.
+
 
 (7)What does python support? call by reference or call by value?
 Ans:
@@ -208,4 +212,84 @@ Ans:
 (23)Why Functions?
 Ans:
     Abstraction and Reusability and extensibility.
+
+(24)How to handle database schema in live project.
+Ans:
+    1. Version Control for Schema Changes:-
+        Use a version control system for managing database schema changes. Tools like Flyway
+
+    2. Backup and Recovery:-
+        Always have a robust backup strategy in place. Regularly back up your database to ensure that you can quickly restore to a known good state if something goes wrong.
+
+    3. Development and Testing Environment:-
+        Maintain separate development, testing, and staging environments to test schema changes before applying them to the production database. This helps catch mistakes early.
+
+(25)What is code first and database first approch in live project?
+Ans:
+    Code First:-
+
+    In the Code First approach, developers define the database schema using code, typically by writing classes that represent the data model.
     
+    The database schema is generated from these classes through a process known as migrations, which are applied to create or update the database structure.
+
+    Code First is ideal for new projects, agile development, and teams that prefer managing schema changes through code.
+    
+
+    Database First:-
+    
+    In the Database First approach, the database schema is designed and managed directly in the database using tools such as SQL scripts or database management systems (DBMS). 
+    
+    The application code is then generated based on the existing database schema.
+
+    Database First is suited for projects with existing databases, complex schemas, and teams with strong database management skills.
+
+(26)What is micro service?
+Ans: 
+
+
+(27)Is time complexity more important than space complexity?
+Ans:
+    Neither time complexity nor space complexity is universally more important; the priority depends on various factors of the project such as the nature of the application, available resources, and performance requirements.
+
+(28)Range vs Xrange
+Ans:
+
+    range():-
+        Returns a list of integers.
+        Execution speed is slower.
+        Takes more memory as it keeps the entire list of elements in memory.
+        All arithmetic operations can be performed as it returns a list.
+        In python 3, xrange() is not supported.
+
+    xrange():-
+	    Returns a generator object.
+	    Execution speed is faster.
+	    Takes less memory as it keeps only one element at a time in memory.
+	    Such operations cannot be performed on xrange().
+	    In python 2, xrange() is used to iterate in for loops.
+
+(29).py vs .pyc?
+Ans:
+
+
+
+(30)Which kind of langauge perefer python(interpreter or complier) explain both?
+Ans:
+
+
+(31)Different between a == b vs a is b?
+Ans:
+    The ‘is’ is known as the identity operator.
+    The ‘==’ is known as the equality operator.
+
+(32)What is substring?
+Ans:
+
+(33)How to make API response getting faster?
+Ans:
+
+(34)How to convert IST to UST?
+Ans:
+
+
+

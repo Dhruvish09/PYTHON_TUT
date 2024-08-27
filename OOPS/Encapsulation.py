@@ -5,8 +5,8 @@
 
 class Person:
     def __init__(self, name, age):
-        self.name = name  # Private attribute
-        self.age = age    # Private attribute
+        self.name = name  # Public attribute
+        self.age = age    # Public attribute
 
     def display_info(self):
         print(f"The Encapsulation name is {self.name} and the age is {self.age}. (Public)")

@@ -1,3 +1,8 @@
+# append,extend,
+# count,index,len
+# del,remove,insert
+# min,max,sum
+
 ##[append()]
 # Adds List Element as value of List. 
 List = ['Mathematics', 'chemistry', 1997, 2000] 

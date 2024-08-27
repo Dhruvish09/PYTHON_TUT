@@ -41,7 +41,7 @@ Ans:
 (9)What Is The SQL Query Used To Fetch The Common Records From Two Tables?
 Ans:
     SELECT * FROM Employee
-    INNER JOIN Emp ON Employee.ID = Emp.ID;
+    INNER JOIN Skill ON Employee.Skill_ID = Skill.ID;
 
 (10)What Is The SQL Query Used To Remove The Duplicate Rows In Table?
 Ans:
@@ -135,6 +135,34 @@ Ans:
 
     The foreign key is used to link one or more tables together. It is also known as the Referencing Key.
 
-(19)
+(19)UNION vs UNION All
+Ans:-
+    UNION Operator in SQL is used to combine the set of one or more SELECT statements as the resulting. 
+    The UNION operator removes duplicates from the combined result from the set of SELECT statements.
+
+    UNION ALL operator in SQL is also used to combine the set of one or more select statements as the result.
+
+
+    The difference between UNION and UNION ALL is that in the UNION ALL operator there are duplicates in the result sets of SELECT statements whereas in the UNION operator, there are no duplicate values.
+    
+
+(20)Cartesian Join (Cross Join)
+    A Cartesian join, also known as a cross join, returns the Cartesian product of the two tables. This means every row from the first table is paired with every row from the second table.
+
+    Example:
+
+    SELECT * FROM table1
+    CROSS JOIN table2;
+
+(21)Different between Full outer join vs UNION ALL
+Ans:
+    A FULL OUTER JOIN combines the results of both left and right outer joins. 
+    It returns all rows from both tables, with NULLs in places where there is no match between the tables.
+
+    UNION ALL combines the results of two or more SELECT queries and includes all duplicates. 
+    It simply concatenates the result sets.
+
+
+there customer table so i want only customer who made trasaction in 2013 and 2023 in sql
 
 

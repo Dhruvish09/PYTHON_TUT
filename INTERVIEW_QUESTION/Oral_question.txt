@@ -151,8 +151,8 @@ Ans: Python has several advantages, including being an interpreted language, ext
 (9)What are *args and **kwargs?
     *args: Allows a function to accept a variable number of positional arguments, collecting them into a tuple.
     Example:
-    def myFun(*argv):
-	    for arg in argv:
+    def myFun(*args):
+	    for arg in args:
 		    print(arg)
 
     myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')

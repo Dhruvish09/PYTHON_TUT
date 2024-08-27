@@ -31,7 +31,7 @@ elements_to_add = [15, 25]
 indices_to_add = [2, 4]
 
 # Add elements at specific indices
-for element,index in zip(elements_to_add, indices_to_add):
+for index,element in zip(indices_to_add,elements_to_add):
     original_list.insert(index, element)
 
 # Display the modified list
@@ -72,7 +72,21 @@ for  i in original_list:
 
 print(new_list)
 
-'''List Comprehension'''
+# Second Approch
+def flatter_list(my_list):
+    new_list = []
+    for element in my_list:
+        if isinstance(element,list):
+            new_list.extend(flatter_list(element))
+        else:
+            new_list.append(element)
+
+    return new_list
+
+print(flatter_list(my_list))
+
+
+'''(5)List Comprehension'''
 my_list = [2, 3, 4, 5, 6, 7, 8, 9]
 # (1)Power of 2 numbers
 result = [x**2 for x in my_list]
@@ -99,3 +113,33 @@ print(f"Flattening list: {result}")
 my_list = ["apple", "banana", "cherry"]
 result = [x[0] for x in my_list]
 print(f"Your first latter of string is: {result}")
+
+
+'''(6) Sort element in list using decorator'''
+def sort_decorator(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        if isinstance(result, list):
+            return sorted(result)
+        else:
+            return result
+    return wrapper
+
+@sort_decorator
+def get_numbers(my_list):
+    return my_list
+
+my_list = [3,2,4,6,3,56,7,8,5,3,3,5]
+print(get_numbers(my_list))
+
+
+'''(7) List element Rotation Program based on provide lenght of index'''
+my_list = [1, 2, 3, 4, 5, 6]
+
+def rotate_list(my_list, n):
+    result = my_list[-n:] + my_list[:-n]
+
+    return result
+
+print(rotate_list(my_list, 2))  # Output: [5, 6, 1, 2, 3, 4]
+print(rotate_list(my_list, 3))  # Output: [4, 5, 6, 1, 2, 3]
