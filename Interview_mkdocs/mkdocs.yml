@@ -3,6 +3,55 @@ site_url: https://example.com/docs
 site_description: Comprehensive documentation for My Project.
 site_author: Dhruvish Patel
 
+theme:
+  name: material
+  palette:
+    primary: 'indigo'
+    accent: 'pink'
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch between dark and light mode
+  font:
+    text: "Roboto"
+    code: "Fira Code"
+  icon:
+    logo: material/puzzle-edit-outline
+  # logo:
+  #   text: "Python Roadmap"
+  #   image: 'images/logo.png'  # Path to the header logo image
+  # favicon: 'images/logo1.png'
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - toc.integrate
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+# theme:
+#   name: material
+#   # features:
+#   #   - navigation.tabs
+#   #   - navigation.sections  # This enables collapsible sections
+#   palette:
+#     primary: 'deep purple'
+#     accent: 'amber'
+#   font:
+#     text: 'Roboto'
+#     code: 'Roboto Mono'
+
+# theme:
+#   name: material
+#   palette:
+#     primary: 'blue'
+#     accent: 'light blue'
+#   font:
+#     text: 'Open Sans'
+#     code: 'Fira Mono'
+  # logo: 'images/logo.png'
+
 markdown_extensions:
   - toc:
       permalink: true
@@ -11,6 +60,21 @@ markdown_extensions:
   - codehilite:
       guess_lang: false
   - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.critic
+  - pymdownx.inlinehilite
+  - pymdownx.details
+  - pymdownx.snippets
+
+# markdown_extensions:
+#   - toc:
+#       permalink: true
+#   - tables
+#   - admonition
+#   - codehilite:
+#       guess_lang: false
+#   - pymdownx.superfences
 
 nav:
   - Home: index.md
@@ -45,31 +109,6 @@ nav:
     # - AWS: Framework/Django_Framework.md
     - Docker: Devops/Docker.md
     # - Fastapi_Framework: Framework/Fastapi_Framework.md
-
-
-
-
-theme:
-  name: material
-  # features:
-  #   - navigation.tabs
-  #   - navigation.sections  # This enables collapsible sections
-  palette:
-    primary: 'deep purple'
-    accent: 'amber'
-  font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
-
-# theme:
-#   name: material
-#   palette:
-#     primary: 'blue'
-#     accent: 'light blue'
-#   font:
-#     text: 'Open Sans'
-#     code: 'Fira Mono'
-  # logo: 'images/logo.png'
 
 
 plugins:

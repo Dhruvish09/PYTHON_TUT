@@ -29,10 +29,10 @@
             # Define fields for YetAnotherModel
             pass
 
-## 1. Select data
+## 2. Select data
     User.objects.filter(gender='F')
 
-## 2. Operators
+## 3. Operators
 
 - **IN Operator:**
   The `IN` operator is used to filter querysets based on whether a field's value is within a given list of values.
@@ -47,11 +47,11 @@
             print(user.name, user.email)
     ```
 
-## 3. ORDER BY
+## 4. ORDER BY
     asceding_ordered = User.objects.order_by('name') # Return asceding order record
     descending_ordered = User.objects.order_by('-name') # Return descending order record
 
-## 4. IS NULL and IS NOT NULL
+## 5. IS NULL and IS NOT NULL
 
 - **IS NULL:**
     ```python
@@ -63,7 +63,7 @@
         users_with_mobile = User.objects.exclude(mobile__isnull=True)
     ```
 
-## 4. Update and Delete
+## 6. Update and Delete
 
 - **Update:**
     ```python
@@ -77,7 +77,7 @@
         Student.objects.filter(id=4).delete()
     ```
 
-## 4. GROUP BY and HAVING
+## 7. GROUP BY and HAVING
 
 - **GROUP BY:**
     GROUP BY in Django ORM is achieved using the values() method to specify the fields you want to group your query results by. It organizes the results into groups based on one or more columns.

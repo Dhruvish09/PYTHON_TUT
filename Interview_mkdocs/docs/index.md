@@ -31,7 +31,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     ***Bold Italic*** or ___Bold Italic___
 
 
-### Lists
+## Lists
 
     ## Unordered Lists:-
         - Item 1
@@ -84,4 +84,18 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
     [^docs]: [MkDocs Documentation](https://www.mkdocs.org/)
 
+## GIF Load
 
+Here is an example square GIF:
+
+<img src="images/api_performance.gif" alt="Example GIF" class="square-image">
+
+
+## Video Load
+
+Here is an example video:
+
+<video width="600" controls>
+  <source src="videos/hacker.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
