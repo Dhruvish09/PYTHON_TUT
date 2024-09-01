@@ -48,10 +48,23 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         3. Third item
 
 ## Links
-    [Link Text](https://example.com)
+    [Link Text](https://example.com "Your Name")
+
+    For Direct use link:
+    Visit our site at https://example.com for more information.
+
+!!! note "Phasellus posuere in sem ut cursus"
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
 
 ## Images
-    ![Alt Text](images/logo.png)
+    ![Alt Text](assets/images/logo.png)
+    ![Alt Text](assets/images/logo.png){ align=left }
+    ![Alt Text](assets/images/logo.png){ align=right }
+
+    
 
 ## Code Blocks
 
@@ -72,11 +85,10 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Admonitions
 
-    !!! note "Note Title"
-        This is a note.
-
-    !!! warning "Warning Title"
-        This is a warning.
+!!! note "Note Title"
+    This is a note.
+!!! warning "Warning Title"
+    This is a warning.
 
 ## Footnotes
 
@@ -88,14 +100,18 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 Here is an example square GIF:
 
-<img src="images/api_performance.gif" alt="Example GIF" class="square-image">
+<img src="assets/images/api_performance.gif" alt="Example GIF" class="square-image">
 
+<figure markdown="span">
+  ![Image title](assets/images/api_performance.gif){ width="300" }
+  <figcaption>Image caption</figcaption>
+</figure>
 
 ## Video Load
 
 Here is an example video:
 
 <video width="600" controls>
-  <source src="videos/hacker.mp4" type="video/mp4">
+  <source src="assets/videos/hacker.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
