@@ -15,6 +15,24 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docker build -t mkdocs-site .
     docker-compose up
 
+## Build Mkdocs
+    1. Generate Static Files:
+        > mkdocs build or  > mkdocs build --site-dir site  
+
+    2. Install ghp-import (if not installed):
+        > pip install ghp-import
+
+    3. Deploy to GitHub Pages:
+        > ghp-import -n -p -b gh-pages site
+
+    4. Configure GitHub Pages:
+        Go to your GitHub repository.
+        Navigate to "Settings" > "Pages".
+        Ensure the source branch is set to gh-pages.
+
+    5. Access Your Site:
+    Your site will be available at https://<username>.github.io/<repository>/.
+
 ## Header
 
     # H1 Header
