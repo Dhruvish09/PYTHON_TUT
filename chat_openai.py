@@ -12,7 +12,7 @@ app = FastAPI()
 
 class ChatRequest(BaseModel):
     message: str
-    model: str = "gpt-3.5-turbo"
+    model: str = "gpt-4.1"
 
 @app.post("/chat")
 async def chat_with_openai(chat_request: ChatRequest):
