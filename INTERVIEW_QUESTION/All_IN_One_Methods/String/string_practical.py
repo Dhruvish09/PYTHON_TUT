@@ -13,6 +13,7 @@ def count_vowels(input_string):
     vowels = "aeiouAEIOU"
     return sum(1 for char in input_string if char in vowels)
 
+
 print("Count of vowls are:",count_vowels("Dhruvish patel"))
 
 # (3)Write a Python program to find the most frequent character in a string.

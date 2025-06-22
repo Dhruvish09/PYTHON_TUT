@@ -1,3 +1,18 @@
+lst = [3, 1, 2]
+
+lst.append(4)       # [3, 1, 2, 4]
+lst.extend([5, 6])  # [3, 1, 2, 4, 5, 6]
+lst.insert(1, 10)   # [3, 10, 1, 2, 4, 5, 6]
+lst.remove(10)      # [3, 1, 2, 4, 5, 6]
+last = lst.pop()    # Removes 6
+i = lst.index(4)    # 3
+c = lst.count(2)    # 1
+lst.sort()          # [1, 2, 3, 4, 5]
+lst.reverse()       # [5, 4, 3, 2, 1]
+copy_lst = lst.copy()
+lst.clear()         # []
+
+
 # append,extend,
 # count,index,len
 # del,remove,insert

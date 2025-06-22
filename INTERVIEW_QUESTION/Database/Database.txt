@@ -302,3 +302,12 @@ Ans:
         GROUP BY customer_id
         HAVING SUM(quantity) > 100;
 
+
+
+Give Multiple Tables and get records from them using different sql queries
+
+Explain Your Bigger chalange you faced in your project
+Explain and Draw that arcitechure which you implement in your project like kafka
+
+
+Why Jwt token is not secure?
